@@ -4,12 +4,10 @@ using UnityEngine.SceneManagement;
 public class ItemManager : MonoBehaviour
 {
     public static ItemManager Instance { get; private set; }
-
     public Camera mainCamera;
     public Vector3 holdPositionOffset = new Vector3(0.4f, -0.3f, 1f);
     public float alphaWhenSelected = 0.5f;
     public Material transparentMaterial;
-
     private GameObject selectedItem;
     private GameObject copiedItem;
     private Material originalMaterial;
@@ -17,34 +15,7 @@ public class ItemManager : MonoBehaviour
     private Key heldKey = null;
     private AudioSource audioSource;
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    void Start()
-    {
-        audioSource = gameObject.AddComponent<AudioSource>();
-    }
-
-    void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        mainCamera = Camera.main;
-    }
+    
 
     void Update()
     {
@@ -85,53 +56,44 @@ public class ItemManager : MonoBehaviour
 
         if (key != null)
         {
-            ToggleItemSelection(obj);
-            heldKey = selectedItem != null ? key : null;
+            if (selectedItem == null)
+            {
+                SelectItem(obj);
+                heldKey = key;
+            }
+            else if (selectedItem == obj)
+            {
+                ReturnItemToOriginalState();
+                heldKey = null;
+            }
         }
         else if (lockable != null && heldKey != null)
         {
             TryUnlock(lockable);
-        }
-        else if (obj.CompareTag("Item"))
-        {
-            ToggleItemSelection(obj);
         }
     }
 
     void TryUnlock(Lockable lockable)
     {
         if (heldKey == null) return;
-
         if (heldKey.keyId == lockable.requiredKeyId)
         {
             lockable.Unlock();
-            ReturnItemToOriginalState();
-            heldKey = null;
-        }
-    }
-    void ToggleItemSelection(GameObject item)
-    {
-        if (selectedItem == item)
-        {
-            ReturnItemToOriginalState();
-        }
-        else
-        {
-            if (selectedItem != null)
-            {
-                ReturnItemToOriginalState();
-            }
-            SelectItem(item);
+            // 열쇠로 문을 열어도 들고 있는 아이템을 유지
         }
     }
 
     void SelectItem(GameObject item)
     {
+        if (selectedItem != null)
+        {
+            ReturnItemToOriginalState();
+        }
+
         selectedItem = item;
         Renderer itemRenderer = selectedItem.GetComponent<Renderer>();
         originalMaterial = itemRenderer.sharedMaterial;
         originalColor = originalMaterial.color;
-
         if (transparentMaterial != null)
         {
             itemRenderer.material = transparentMaterial;
@@ -141,11 +103,9 @@ public class ItemManager : MonoBehaviour
         {
             Debug.LogWarning("Transparent material is not assigned in the inspector!");
         }
-
         copiedItem = Instantiate(selectedItem, mainCamera.transform.position, mainCamera.transform.rotation);
         copiedItem.transform.localScale = selectedItem.transform.localScale * 0.2f;
         copiedItem.GetComponent<Renderer>().material = originalMaterial;
-
         Collider copiedCollider = copiedItem.GetComponent<Collider>();
         if (copiedCollider != null)
         {
