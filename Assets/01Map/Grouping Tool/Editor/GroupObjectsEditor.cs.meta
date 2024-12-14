@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6e466288643a3464d89850a461a83a7e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 147552
+  packageName: Grouping Tool
+  packageVersion: 1.0.0
+  assetPath: Assets/Grouping Tool/Editor/GroupObjectsEditor.cs
+  uploadId: 313733

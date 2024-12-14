@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cb17e7a1fb1801d42bdd3b5d1fab5dd1
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 36050
+  packageName: Azure[Sky] Dynamic Skybox
+  packageVersion: 8.0.4
+  assetPath: Assets/Plugins/Azure[Sky] Dynamic Skybox/Demos/Scenes/Scene.unity
+  uploadId: 710611

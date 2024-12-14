@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: dc18d065624a52747ae732f5bad8b8e3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 36050
+  packageName: Azure[Sky] Dynamic Skybox
+  packageVersion: 8.0.4
+  assetPath: Assets/Plugins/Azure[Sky] Dynamic Skybox/Demos/Scripts/AzureCameraOrbit.cs
+  uploadId: 710611

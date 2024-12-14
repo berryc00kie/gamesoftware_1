@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d2d4276a13a7497488e135dec22863ec
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 241115
+  packageName: Desert Cliffs and Rocks
+  packageVersion: 1.1
+  assetPath: Assets/Desert Cliffs and Rocks/Scenes/Sample Scene/HDRP/HDRP_LightSettings_SampleMap.lighting
+  uploadId: 698057

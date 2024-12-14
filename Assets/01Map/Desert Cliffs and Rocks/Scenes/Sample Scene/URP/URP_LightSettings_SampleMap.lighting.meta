@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a4e8a56cfd2252343845c72539abdfca
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 241115
+  packageName: Desert Cliffs and Rocks
+  packageVersion: 1.1
+  assetPath: Assets/Desert Cliffs and Rocks/Scenes/Sample Scene/URP/URP_LightSettings_SampleMap.lighting
+  uploadId: 698057
