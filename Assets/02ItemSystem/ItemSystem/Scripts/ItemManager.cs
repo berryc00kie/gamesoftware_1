@@ -79,7 +79,7 @@ public class ItemManager : MonoBehaviour
         if (heldKey.keyId == lockable.requiredKeyId)
         {
             lockable.Unlock();
-            // 열쇠로 문을 열어도 들고 있는 아이템을 유지
+          
         }
     }
 

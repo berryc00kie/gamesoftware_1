@@ -16,7 +16,7 @@ public class Lockable : MonoBehaviour
 
     private void Awake()
     {
-        // AudioSource 컴포넌트 추가 (없는 경우에만)
+        // 소리
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -30,8 +30,7 @@ public class Lockable : MonoBehaviour
 
         if (unlockedObject != null)
         {
-            // 잠금 해제 소리 재생
-            // 잠금 해제 사운드 재생
+           //소리재생
             if (unlockSound != null)
             {
                 AudioSource.PlayClipAtPoint(unlockSound, transform.position);

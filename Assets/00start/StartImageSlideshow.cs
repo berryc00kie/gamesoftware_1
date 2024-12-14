@@ -14,7 +14,7 @@ public class StartImageSlideshow : MonoBehaviour, IImageSlideshow
 
     void start()
     {
-        if (SceneManager.GetActiveScene().name != "Start")  // "Start"를 해당 씬 이름으로 변경
+        if (SceneManager.GetActiveScene().name != "Start")  
         {
             Destroy(gameObject);
             return;
@@ -30,7 +30,7 @@ public class StartImageSlideshow : MonoBehaviour, IImageSlideshow
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name != "Start")  // "Start"를 해당 씬 이름으로 변경
+        if (scene.name != "Start")  
         {
             Destroy(gameObject);
         }
