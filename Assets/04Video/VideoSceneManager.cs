@@ -39,7 +39,7 @@ public class VideoSceneManager : MonoBehaviour
 
         if (displayImage != null)
         {
-            displayImage.enabled = false; // 게임 시작 시 RawImage 비활성화
+            displayImage.enabled = false; 
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -71,7 +71,7 @@ public class VideoSceneManager : MonoBehaviour
             }
         }
 
-        // 런타임에 RenderTexture 생성
+        // 런타임에 RenderTexture 
         if (videoRenderTexture == null)
         {
             videoRenderTexture = new RenderTexture(1920, 1080, 24);
@@ -108,7 +108,7 @@ public class VideoSceneManager : MonoBehaviour
     {
         EnableVideoPlayer();
 
-        // RawImage 상태 확인
+        // RawImage 상태 
         if (displayImage != null)
         {
             Debug.Log("RawImage enabled: " + displayImage.enabled);
@@ -126,7 +126,7 @@ public class VideoSceneManager : MonoBehaviour
         while (videoPlayer.isPlaying)
         {
             Debug.Log("Video time: " + videoPlayer.time);
-            yield return new WaitForSeconds(1f); // 1초마다 로그 출력
+            yield return new WaitForSeconds(1f); // 1초마다 로그 
         }
 
         Debug.Log("Video finished playing");

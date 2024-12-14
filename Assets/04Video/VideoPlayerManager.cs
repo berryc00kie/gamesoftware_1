@@ -15,10 +15,10 @@ public class VideoPlayerManager : MonoBehaviour
     {
         sceneLoader = FindObjectOfType<VideoSceneLoader>();
 
-        // VideoPlayer 컴포넌트 추가
+        
         videoPlayer = gameObject.AddComponent<VideoPlayer>();
 
-        // 비디오 파일 경로 설정
+        // 비디오 파일 경로 
         string videoPath = Path.Combine(Application.streamingAssetsPath, videoFileName);
 
         if (File.Exists(videoPath))
@@ -29,7 +29,7 @@ public class VideoPlayerManager : MonoBehaviour
             videoPlayer.url = videoPath;
             videoPlayer.isLooping = false;
 
-            // 비디오 재생 완료 이벤트 리스너 추가
+            // 비디오 재생 완료 이벤트 리스너
             videoPlayer.loopPointReached += OnVideoFinished;
 
             // 프레임 준비 이벤트에 메서드 연결
@@ -47,7 +47,7 @@ public class VideoPlayerManager : MonoBehaviour
 
     void PrepareCompleted(VideoPlayer vp)
     {
-        // 비디오 텍스처를 Raw Image에 할당
+        
         if (videoDisplay != null)
         {
             videoDisplay.texture = videoPlayer.texture;

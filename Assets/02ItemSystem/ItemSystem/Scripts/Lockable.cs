@@ -16,7 +16,7 @@ public class Lockable : MonoBehaviour
 
     private void Awake()
     {
-        // 家府
+        
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -30,7 +30,6 @@ public class Lockable : MonoBehaviour
 
         if (unlockedObject != null)
         {
-           //家府犁积
             if (unlockSound != null)
             {
                 AudioSource.PlayClipAtPoint(unlockSound, transform.position);

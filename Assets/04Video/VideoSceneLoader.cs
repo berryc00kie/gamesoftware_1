@@ -22,7 +22,7 @@ public class VideoSceneLoader : MonoBehaviour
         Scene videoScene = SceneManager.GetSceneByName(videoSceneName);
         SceneManager.SetActiveScene(videoScene);
 
-        // 현재 씬의 카메라 비활성화
+        // 현재 씬 카메라 비활성화
         Camera mainCamera = Camera.main;
         if (mainCamera != null)
         {
@@ -39,7 +39,7 @@ public class VideoSceneLoader : MonoBehaviour
 
     private System.Collections.IEnumerator UnloadVideoScene()
     {
-        // 메인 씬으로 돌아가기
+        // 메인 씬으로 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(mainSceneName));
 
         // 메인 카메라 다시 활성화
@@ -49,7 +49,7 @@ public class VideoSceneLoader : MonoBehaviour
             mainCamera.gameObject.SetActive(true);
         }
 
-        // 비디오 씬 언로드
+        // 비디오 언로드
         yield return SceneManager.UnloadSceneAsync(videoSceneName);
     }
 }

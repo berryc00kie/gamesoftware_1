@@ -13,7 +13,7 @@ public class Scene4ImageSlideshow : MonoBehaviour, IImageSlideshow
 
     void Awake()
     {
-        if (SceneManager.GetActiveScene().name != "4")  // "Start"를 해당 씬 이름으로 변경
+        if (SceneManager.GetActiveScene().name != "4")  
         {
             Destroy(gameObject);
             return;
@@ -29,7 +29,7 @@ public class Scene4ImageSlideshow : MonoBehaviour, IImageSlideshow
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name != "4")  // "Start"를 해당 씬 이름으로 변경
+        if (scene.name != "4")  
         {
             Destroy(gameObject);
         }
@@ -56,7 +56,7 @@ public class Scene4ImageSlideshow : MonoBehaviour, IImageSlideshow
         displayImage.sprite = images[0];
         audioSource = gameObject.AddComponent<AudioSource>();
 
-        // 디버그 로그 추가
+        // 디버그 로그 
         Debug.Log($"Initialized Scene4ImageSlideshow with {images.Length} images.");
     }
 
@@ -71,7 +71,7 @@ public class Scene4ImageSlideshow : MonoBehaviour, IImageSlideshow
     void NextImage()
     {
         currentImageIndex++;
-        Debug.Log($"Moving to image index: {currentImageIndex}"); // 디버그 로그 추가
+        Debug.Log($"Moving to image index: {currentImageIndex}"); // 디버그 로그 
 
         if (currentImageIndex >= images.Length)
         {
